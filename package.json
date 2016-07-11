@@ -4,7 +4,18 @@
   "description": "Minimalist to-do",
   "author": "Chris Heo",
 
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
-    "express": "^4.4.5"
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "1.0.8",
+    "ejs": "~0.8.5",
+    "express": "~3.4.8",
+    "express-partials": "~0.2.0",
+    "forever": "^0.10.11",
+    "lodash": "~2.4.0",
+    "mongoose": "~3.8.8",
+    "request": "^2.34.0"
   }
 }
