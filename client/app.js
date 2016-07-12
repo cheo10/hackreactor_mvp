@@ -44,10 +44,6 @@ angular.module('zen', [])
         $scope.main = false;
         $scope.focus = String(item);
       }
-
     }
 
-    $scope.shiftView = function(){
-      $scope.main = false;
-    }
   });
