@@ -1,7 +1,7 @@
 console.log("APP.js connected");
 
 angular.module('zen', [])
-  .controller('toDo', function($scope){
+  .controller('toDoList', function($scope){
 
     $scope.list = [];
     $scope.completed = [];
