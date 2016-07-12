@@ -24,33 +24,35 @@
 
   <body ng-app="zen" ng-controller="toDoList">
 
+  <video autoplay loop id="bgvid">
+    <source src="assets/vid.mp4" type="video/mp4">
+</video>
 
 
-    <h1>zen-do</h1>
+    <div class="title"><h1>zen-do</h1></div>
 
+    <div class="toDoList">
 
+      <h2>Add Task</h2>
       <form ng-submit="add()">
-        <input ng-model="task" placeholder="Add task and press enter">
+        <input ng-model="task" placeholder="Add task and press enter" style="width: 250px">
       </form>
 
-      <h2>Tasks:</h2>
-      <ul>
-        <div ng-repeat="item in list track by $index" class="task toDo">
-          <span>{{ item }}</span>
-          <button ng-click="done()">Done</button>
-          <button ng-click="deleteFromList(item)">Delete</button>
-        </div>
-      </ul>
+      <h2>Tasks</h2>
+      <div ng-repeat="item in list track by $index" class="task toDo">
+        <span>{{ item }}</span>
+        <button ng-click="done()">Done</button>
+        <button ng-click="deleteFromList(item)">Delete</button>
+      </div>
 
-      <h2>Completed:</h2>
-      <ul>
-       <div ng-repeat="item in completed track by $index" class="task completed">
-         <span>{{ item }}</span>
-         <button ng-click="redo()">Redo</button>
-         <button ng-click="deleteFromCompleted(item)">Delete</button>
-       </div>
-      </ul>
+      <h2>Completed</h2>
+      <div ng-repeat="item in completed track by $index" class="task completed">
+        <span>{{ item }}</span>
+        <button ng-click="redo()">Redo</button>
+        <button ng-click="deleteFromCompleted(item)">Delete</button>
+      </div>
 
+    </div>
 
   </body>
 </html>

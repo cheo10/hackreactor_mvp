@@ -7,9 +7,11 @@ angular.module('zen', [])
     $scope.completed = [];
 
     $scope.add = function() {
-      $scope.list.push($scope.task);
-      //clear input field
-      $scope.task = "";
+      if($scope.task){
+        $scope.list.push($scope.task);
+        //clear input field
+        $scope.task = "";
+      }
     };
 
     $scope.done = function() {
