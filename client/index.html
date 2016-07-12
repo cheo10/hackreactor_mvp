@@ -25,17 +25,17 @@
 
     <div id='container'>
       <nav class="navigation">
-      <span>
-            <a href="#/MainList">Main List</a>
-      </span>
+      <div>
+        <button class="nav" ng-click="toggle()" >Main List</button>
+      </div>
 
-      <span ng-repeat="item in list track by $index">
-            <a href="#/{{ item }}">{{ item }}</a>
-      </span>
+      <div ng-repeat="item in list track by $index">
+        <button class="nav" ng-click="toggle(item)">{{ item }}</button>
+      </div>
       </nav>
     </div>
 
-    <div class="toDoList">
+    <div ng-show="main" class="toDoList">
       <h2>Add Task</h2>
       <form ng-submit="add()">
         <input ng-model="task" placeholder="Add task and press enter" style="width: 250px">
@@ -53,6 +53,12 @@
         <span>{{ item }}</span>
         <button ng-click="redo()">Redo</button>
         <button ng-click="deleteFromCompleted(item)">Delete</button>
+      </div>
+    </div>
+
+    <div ng-show="focus===item" ng-repeat="item in list track by $index">
+      <div class="focus">
+        <h1>hello there {{ item }}</h1>
       </div>
     </div>
 

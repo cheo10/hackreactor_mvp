@@ -1,28 +1,41 @@
 .title{
   width: 120px;
   border: 2px solid white;
-  /*padding: 5px 5px 5px 5px;*/
   border-radius: 5px;
   text-align: center;
   font-size: 0.8em;
 }
 .navigation {
   margin: 0 auto;
-  margin-left: 10px;
+  margin-left: 25px;
   margin-top: 30px;
-
 }
 
-/*#container {
-  clear: both;
-  margin-top: 10px;
-}*/
+button{
+  float: left;
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
+  border: 2px solid white;
+  color: white;
+  background-color: transparent;
+  float: right;
+  margin: -2px 3px 3px 5px;
+}
 
-.toDoList {
+button:hover{
+  background-color: white;
+  color: black;
+}
+.nav{
+  float:left;
+}
+
+.toDoList, .focus {
   width: 420px;
   padding: 5px 5px 5px 5px;
   margin: 0 auto;
-  margin-top: 55px;
+  margin-top: 90px;
   border: 2px solid white;
   border-radius: 5px;
   font-size: 1.1em;
@@ -31,12 +44,17 @@
 
 .toDoList input, input::-webkit-input-placeholder {
   font-size: 15px;
+  background-color: transparent;
   text-align: center;
   line-height: 2;
   height: 30px;
   margin: 0 auto;
   display: block;
-  opacity: 0.9;
+  color: white;
+}
+
+input, select, textarea{
+    color: white;
 }
 
 .toDoList h2{
@@ -54,13 +72,9 @@
   font-style: italic;
 }
 
-h1, h2, span, a{
+h1, h2, span{
   color: white;
   font-family: Verdana;
-}
-
-a{
-  margin-left: 15px;
 }
 
 button {
@@ -84,6 +98,5 @@ video#bgvid {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url(polina.jpg) no-repeat;
     background-size: cover;
 }

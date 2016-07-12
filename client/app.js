@@ -5,6 +5,8 @@ angular.module('zen', [])
 
     $scope.list = [];
     $scope.completed = [];
+    $scope.focus = '';
+    $scope.main = true;
 
     $scope.add = function() {
       if($scope.task){
@@ -32,4 +34,20 @@ angular.module('zen', [])
     $scope.deleteFromCompleted = function(item) {
       $scope.completed.splice($scope.completed.indexOf(item), 1);
     };
+
+    $scope.toggle = function(item){
+      item = item || null;
+      if(!item){
+        $scope.main = true;
+        $scope.focus = '';
+      } else{
+        $scope.main = false;
+        $scope.focus = String(item);
+      }
+
+    }
+
+    $scope.shiftView = function(){
+      $scope.main = false;
+    }
   });
