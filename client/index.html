@@ -10,15 +10,8 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="lib/jquery.slimscroll.min.js"></script>
-    <script src="lib/jquery.fullPage.min.js"></script>
     <script src="lib/angular.min.js"></script>
-    <script src="lib/angular-ui-router.min.js"></script>
-    <script src="lib/angular-fullpage.min.js"></script>
-
-
     <script src="app.js"></script>
-
   </head>
 
 
@@ -30,8 +23,19 @@
 
     <div class="title"><h1>zen-do</h1></div>
 
-    <div class="toDoList">
+    <div id='container'>
+      <nav class="navigation">
+      <span>
+            <a href="#/MainList">Main List</a>
+      </span>
 
+      <span ng-repeat="item in list track by $index">
+            <a href="#/{{ item }}">{{ item }}</a>
+      </span>
+      </nav>
+    </div>
+
+    <div class="toDoList">
       <h2>Add Task</h2>
       <form ng-submit="add()">
         <input ng-model="task" placeholder="Add task and press enter" style="width: 250px">
@@ -50,7 +54,6 @@
         <button ng-click="redo()">Redo</button>
         <button ng-click="deleteFromCompleted(item)">Delete</button>
       </div>
-
     </div>
 
   </body>
